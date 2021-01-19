@@ -47,18 +47,26 @@ html_head= """
 <table border=1 width=80%>
 <tr>
 	<th>BAM number</th>
-	<th>delta amplitude</th>
-	<th>delta phase</th>
+	<th colspan="2">PLOT</th>
 </tr>
 """
 
 html_loop = """
 <tr>
-	<td>BAM:{}</td>
+	<td rowspan="3">BAM:{}</td>
+	<td><img class="autoResizeImage" src="{}"\></td>
+	<td><img class="autoResizeImage" src="{}"\></td>
+</tr>
+<tr>
+	<td><img class="autoResizeImage" src="{}"\></td>
+	<td><img class="autoResizeImage" src="{}"\></td>
+</tr>
+<tr>
 	<td><img class="autoResizeImage" src="{}"\></td>
 	<td><img class="autoResizeImage" src="{}"\></td>
 </tr>
 """
+
 html_end = """
 </table>
 
@@ -66,17 +74,23 @@ html_end = """
 </body>
 </html>
 """
+path_h = "TD/h/"
+#path_mismatch = "TD/mismatch/"
+path_mismatch = "TD/h/"
 path_amp = "FD/amp/"
 path_deltaamp = "FD/deltaamp/"
+path_phase = "FD/phase/"
+path_deltaphase = "FD/deltaphase/"
+
 elements = BAM_number_list()
-html_image_blocks = ""
+html_images_block = ""
 for BAM in elements:
     BAM_element = BAM_number_conversion(BAM)
     print(BAM_element)
-    html_image_blocks += html_loop.format(BAM_element, path_amp+BAM_element+".png", path_deltaamp+BAM_element+".png")
+    html_images_block += html_loop.format(BAM_element, path_h+BAM_element+".png", path_mismatch+BAM_element+".png", path_amp+BAM_element+".png", path_deltaamp+BAM_element+".png", path_phase+BAM_element+".png", path_deltaphase+BAM_element+".png")
 
 
-index = html_head+html_image_blocks+html_end
+index = html_head+html_images_block+html_end
 f = open('index.html', 'w')
 f.write(index)
 f.close()
