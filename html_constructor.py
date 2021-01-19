@@ -66,8 +66,8 @@ html_end = """
 </body>
 </html>
 """
-path_amp = "/home/luca/Documents/Nextcloud/AEI/Projects/webpage_waveforms/FD/amp/"
-path_deltaamp = "/home/luca/Documents/Nextcloud/AEI/Projects/webpage_waveforms/FD/deltaamp/"
+path_amp = "FD/amp/"
+path_deltaamp = "FD/deltaamp/"
 elements = BAM_number_list()
 html_image_blocks = ""
 for BAM in elements:
