@@ -36,7 +36,7 @@ html_head= """
 </head>
 <body>
 <title></title>
-In this page there are 3 different choices of hybridization window lenght (0.5 cycles, 2 cycles, 3 cycles) and same starting position of the window (500M from initial point of NR data)
+In this page there are 3 different choices of hybridization window lenght (0.5 cycles, 2 cycles, 3 cycles) and same starting position of the window (500M from initial point of NR data) for almost all the cases (the shorter waveforms start at 300M)
  <ul>
   <li>3 time domain hybrid waveforms, numerical relativity data and v4Tsurrogate waveform</li>
   <li>Mismatch for different initial frequencies between v4Tsurrogate and the 3 hybrid waveforms</li>
