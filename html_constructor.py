@@ -74,21 +74,19 @@ html_end = """
 </body>
 </html>
 """
-path_h = "TD/h/"
-path_mismatch = "FD/mismatch/"
-#path_mismatch = "TD/h/"
-path_amp = "FD/amp/"
-path_deltaamp = "FD/deltaamp/"
-path_phase = "FD/phase/"
-path_deltaphase = "FD/deltaphase/"
+path_h = "TD/v4Tsurr_Hybrid/h_2cycles/"
+path_mismatch = "FD/v4Tsurr_v4Tsurrnotidal/mismatch/"
+path_amp = "FD/v4Tsurr_v4Tsurrnotidal/amp/"
+path_deltaamp = "FD/v4Tsurr_v4Tsurrnotidal/deltaamp/"
+path_phase = "FD/v4Tsurr_v4Tsurrnotidal/phase/"
+path_deltaphase = "FD/v4Tsurr_v4Tsurrnotidal/deltaphase/"
 
 elements = BAM_number_list()
+
 html_images_block = ""
 for BAM in elements:
     BAM_element = BAM_number_conversion(BAM)
-    print(BAM_element)
     html_images_block += html_loop.format(BAM_element, path_h+BAM_element+".png", path_mismatch+BAM_element+".png", path_amp+BAM_element+".png", path_deltaamp+BAM_element+".png", path_phase+BAM_element+".png", path_deltaphase+BAM_element+".png")
-
 
 index = html_head+html_images_block+html_end
 f = open('index.html', 'w')
