@@ -39,7 +39,8 @@ html_head= """
 In this page there are 3 different choices of hybridization window lenght (0.5 cycles, 2 cycles, 3 cycles) and same starting position of the window (500M from initial point of NR data) for almost all the cases (the shorter waveforms start at 300M)
  <ul>
   <li>3 time domain hybrid waveforms, numerical relativity data and v4Tsurrogate waveform</li>
-  <li>Mismatch for different initial frequencies between v4Tsurrogate and the 3 hybrid waveforms</li>
+  <li>Mismatch between v4Tsurrogate and the 3 hybrid waveforms with different initial frequencies </li>
+  <li>Mismatch between the 3 hybrid waveforms different initial frequencies </li>
   <li>Frequency domain amplitude for the 3 hybrid waveforms and for v4Tsurrogate </li>
   <li>Logarithm of the absolute difference between v4Tsurrogate and the 3 hybrids </li>
   <li>Frequency domain phase for hybrid, v4Tsurrogate</li>
