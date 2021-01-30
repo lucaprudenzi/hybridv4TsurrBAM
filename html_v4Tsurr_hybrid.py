@@ -56,7 +56,10 @@ In this page there are 3 different choices of hybridization window lenght (0.5 c
 
 html_loop = """
 <tr>
-	<td rowspan="3">BAM:{}</td>
+        <td rowspan="4">BAM:{}</td>
+	<td colspan="2" align="center"><img class="autoResizeImage" src="{}"\></td>
+</tr>
+<tr>
 	<td><img class="autoResizeImage" src="{}"\></td>
 	<td><img class="autoResizeImage" src="{}"\></td>
 </tr>
@@ -79,6 +82,7 @@ html_end = """
 """
 path_h = "TD/v4Tsurr_Hybrid/h/"
 path_mismatch = "FD/v4Tsurr_Hybrid/mismatch/"
+path_mismatch_hybrid = "FD/v4Tsurr_Hybrid/mismatch_hyb/"
 path_amp = "FD/v4Tsurr_Hybrid/amp/"
 path_deltaamp = "FD/v4Tsurr_Hybrid/deltaamp/"
 path_phase = "FD/v4Tsurr_Hybrid/phase/"
@@ -89,7 +93,7 @@ html_images_block = ""
 for BAM in elements:
     BAM_element = BAM_number_conversion(BAM)
     print(BAM_element)
-    html_images_block += html_loop.format(BAM_element, path_h+BAM_element+".png", path_mismatch+BAM_element+".png", path_amp+BAM_element+".png", path_deltaamp+BAM_element+".png", path_phase+BAM_element+".png", path_deltaphase+BAM_element+".png")
+    html_images_block += html_loop.format(BAM_element, path_h+BAM_element+".png", path_mismatch+BAM_element+".png", path_mismatch_hybrid+BAM_element+".png", path_amp+BAM_element+".png", path_deltaamp+BAM_element+".png", path_phase+BAM_element+".png", path_deltaphase+BAM_element+".png")
 
 
 index = html_head+html_images_block+html_end

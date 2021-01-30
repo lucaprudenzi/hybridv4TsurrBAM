@@ -64,8 +64,11 @@ In this page
 
 html_loop = """
 <tr>
-	<td rowspan="3">BAM:{}</td>
-	<td><img class="autoResizeImage" src="{}"\></td>
+        <td rowspan="3">BAM:{}</td>
+	<td colspan="2"><img class="autoResizeImage" src="{}"\></td>
+</tr>
+</tr>
+        <td><img class="autoResizeImage" src="{}"\></td>
 	<td><img class="autoResizeImage" src="{}"\></td>
 </tr>
 <tr>
@@ -97,7 +100,7 @@ elements = BAM_number_list()
 html_images_block = ""
 for BAM in elements:
     BAM_element = BAM_number_conversion(BAM)
-    html_images_block += html_loop.format(BAM_element, path_h+BAM_element+".png", path_mismatch+BAM_element+".png", path_amp+BAM_element+".png", path_deltaamp+BAM_element+".png", path_phase+BAM_element+".png", path_deltaphase+BAM_element+".png")
+    html_images_block += html_loop.format(BAM_element, path_h+BAM_element+".png", path_h+BAM_element+".png", path_mismatch+BAM_element+".png", path_amp+BAM_element+".png", path_deltaamp+BAM_element+".png", path_phase+BAM_element+".png", path_deltaphase+BAM_element+".png")
 
 index = html_head+html_images_block+html_end
 f = open('index.html', 'w')
